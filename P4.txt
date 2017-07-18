@@ -1,0 +1,14 @@
+Problem:
+What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
+Solution:
+
+the prime factorizaton of a number that is divisible by all numbers 1-20 should be 
+
+n = 2*3*2*5*7*3*11*13*2*17*19*(some other combination of primes)
+
+this is obtained by multiplying by each prime between 1 and 20, and multiplying again by that prime every time a power of that prime is encountered. for example, so that n div 4, we multiply by 2 again.
+
+to minimize n, we let (some othe combination of primes) be 1.
+
+so the solution is 232792560
