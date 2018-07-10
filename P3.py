@@ -1,18 +1,14 @@
 # By Louis Bursey
 # Program to solve Problem 3 from ProjectEuler.net
 # What is the largest prime factor of the number 600851475143 ?
-from math import sqrt
+from math import floor,sqrt
 from itertools import count, islice
 number = 600851475143
 
 
 
-def is_prime(n):
-    if n < 2: return False
-    for number in islice(count(2), int(sqrt(n)-1)):
-        if not n%number:
-            return False
-    return True
+
+
 
 #naive_solution(number)
 
