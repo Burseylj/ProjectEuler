@@ -1,22 +1,19 @@
 #attempt at project euler problem 14
 
 
+#for some reason the dynamic programming parts aren't helping
 
-
+import time
+ 
+start = time.time()
 
 def collatzLength(x):
     initialValue = x
     length = 0
     while x != 1:
-        if knownLengths[x-1] != -1:
-            length += knownLengths[x-1]
-            break
-        else :
-           # knownLengths[x-1] = collatzLength(collatzSequence(x))
-            x = collatzSequence(x)
-            length += 1
-            
-    knownLengths[initialValue-1] = length
+        x = collatzSequence(x)
+        length+= 1
+
     return length +1
 
 
@@ -24,13 +21,19 @@ def collatzLength(x):
 
 
 def collatzSequence(x):
-    if x == 1:
-        return 1
     if x & 1:
         return (3*x +1)
     else:
         return (x/2)
 
-knownLengths = [-1]*1000000
-for i in range(1,1000):
-    print "length of ",i,"=",collatzLength(i)
+
+biggest = 0
+
+for i in range(1,1000000):
+    clt = collatzLength(i)
+    if clt > biggest:
+        biggest = clt
+
+elapsed = (time.time() - start)
+print "found %s in %s seconds" % (biggest,elapsed)
+        
