@@ -33,7 +33,8 @@ for i in range(1,1000000):
     clt = collatzLength(i)
     if clt > biggest:
         biggest = clt
+        starting = i
 
 elapsed = (time.time() - start)
-print "found %s in %s seconds" % (biggest,elapsed)
+print "found starting number %s with length %s in %s seconds" % (starting,biggest,elapsed)
         
