@@ -1,0 +1,4 @@
+to reach the bottom corner of an NxN grid, we need to go right N times and down N times. 
+two different paths each contain N rights and N downs. they are only different if they have 
+different sequences of rights and downs. Then there are 40 moves to be made, so the total 
+number of possible moves is 40 choose 20.
