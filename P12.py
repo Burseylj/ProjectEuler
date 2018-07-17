@@ -12,15 +12,14 @@ def gen_divisors(n):
             yield i
             if i*i != n:
                 yield n/i
-n = 1
-i = 1
-div = 0
-div_limit = 500
-while(div < div_limit):
-    i += 1
-    n+=i
-    div = len(list(gen_divisors(n)))
+def main():
+    n = 1
+    i = 1
+    div = 0
+    div_limit = 500
+    while(div < div_limit):
+        i += 1
+        n+=i
+        div = len(list(gen_divisors(n)))
 
-print "with {} divisors, the {}th triangular number {} has the most.".format(div,i,n)
-
-                   
+    print "with {} divisors, the {}th triangular number {} has the most.".format(div,i,n)
