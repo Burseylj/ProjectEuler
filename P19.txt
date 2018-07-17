@@ -1,0 +1,1 @@
+there are 1200 days in this century, so 1200/7 gives us the number of sundays.
