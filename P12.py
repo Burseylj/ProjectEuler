@@ -1,9 +1,26 @@
-##getting background info for project euler problem 12
+##project euler problem 12
+import math
 
-triangle = 1
-order = 1
+def triangular_number(n):
+    return n * (n + 1) // 2 
 
-while (triangle < 2**500):
-    triangle = +order
-    order += 1
-    print "order = 1 , number = " + triangle
+
+def gen_divisors(n):
+    divisors = []
+    for i in xrange(1, int(math.sqrt(n) +1)):
+        if n % i == 0:
+            yield i
+            if i*i != n:
+                yield n/i
+n = 1
+i = 1
+div = 0
+div_limit = 500
+while(div < div_limit):
+    i += 1
+    n+=i
+    div = len(list(gen_divisors(n)))
+
+print "with {} divisors, the {}th triangular number {} has the most.".format(div,i,n)
+
+                   
